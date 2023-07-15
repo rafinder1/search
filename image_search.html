@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google images</title>
+    <link rel="stylesheet" href="style_index.css">
+    <script>
+        function searchImages() {
+            var query = document.querySelector('.search-bar input[type="text"]').value;
+            var url = "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(query);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Return to Google</a>
+    <div class="centered-text">
+        <h1>Google images</h1>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="">
+    </div>
+    <div class="search">
+        <button onclick="searchImages()">Google Search</button>
+    </div>
+</body>
+</html>

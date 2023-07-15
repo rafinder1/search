@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Advanced Google Search</title>
+    <link rel="stylesheet" href="style_advanced_search.css">
+    <script>
+        function searchAdvanced(event) {
+            event.preventDefault();
+
+            var allWords = document.getElementById('allWordsInput').value;
+            var exactPhrase = document.getElementById('exactPhraseInput').value;
+            var anyWords = document.getElementById('anyWordsInput').value;
+            var noneOfWords = document.getElementById('noneOfWordsInput').value;
+
+            var query = "https://www.google.com/search?as_q=";
+
+            if (allWords.trim() !== "") {
+                query += encodeURIComponent(allWords) + "+";
+            }
+
+            if (exactPhrase.trim() !== "") {
+                query += "\"" + encodeURIComponent(exactPhrase) + "\"" + "+";
+            }
+
+            if (anyWords.trim() !== "") {
+                query += encodeURIComponent(anyWords) + "+";
+            }
+
+            if (noneOfWords.trim() !== "") {
+                query += "-" + encodeURIComponent(noneOfWords) + "+";
+            }
+
+            window.location.href = query;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Return to Google</a>
+    <div class="advanced-centered-text">
+        <h1>Advanced Google Search</h1>
+    </div>
+    <div class="advanced-search">
+        <form onsubmit="return searchAdvanced(event)">
+            <label>Find pages with...  „all these words:”</label>
+            <input type="text" id="allWordsInput" placeholder="Enter words separated by space">
+
+            <label>Find pages with... „this exact word or phrase:”</label>
+            <input type="text" id="exactPhraseInput" placeholder="Enter a word or phrase">
+
+            <label>Find pages with... „any of these words:”</label>
+            <input type="text" id="anyWordsInput" placeholder="Enter words separated by space">
+
+            <label>Find pages with... „none of these words:”</label>
+            <input type="text" id="noneOfWordsInput" placeholder="Enter words separated by space">
+
+            <button type="submit">Advanced Google Search</button>
+        </form>
+    </div>
+</body>
+</html>

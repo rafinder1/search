@@ -1,0 +1,36 @@
+.advanced-search {
+    width: 500px;
+    margin-top: 25px;
+}
+
+.advanced-search label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.advanced-search input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.advanced-search button {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    border: none;
+    border-radius: 10px;
+    background-color: #4285f4;
+    color: #fff;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.advanced-text {
+    text-align: left; 
+    font-size: 32px;
+    padding-top: 50px;
+}
